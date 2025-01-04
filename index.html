@@ -45,26 +45,6 @@
             max-width: 200px;
             margin: 10px 0;
         }
-        .narrative {
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: left;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border: 1px solid #0f0;
-            border-radius: 10px;
-            overflow-y: auto; /* Pour défilement si nécessaire */
-            max-height: 90vh; /* Pour s’adapter à la taille de l’écran */
-        }
-        .narrative h2 {
-            text-align: center;
-            color: #f00;
-            margin-bottom: 20px;
-        }
-        .narrative ol {
-            list-style: decimal;
-            padding-left: 20px;
-        }
     </style>
 </head>
 <body>
@@ -83,15 +63,6 @@
             <img src="antichristeye.jpg" alt="Antichrist Eye">
             <img src="beast eye.jpg" alt="Beast Eye">
         </div>
-
-        <div class="narrative">
-            <h2>2030 Conspiracy Theories</h2>
-            <ol>
-                <!-- Liste complète des théories -->
-                <li><b>Global Government Establishment:</b> The belief that by 2030...</li>
-                <!-- Ajoutez toutes les théories ici -->
-            </ol>
-        </div>
     </div>
 
     <script>
@@ -109,6 +80,11 @@
             countdownElement.textContent = `Time until January 1, 2030: ${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
         setInterval(updateCountdown, 1000);
+
+        const numericLine = document.getElementById('numeric-line');
+        setInterval(() => {
+            numericLine.textContent = Array(30).fill(0).map(() => Math.floor(Math.random() * 10)).join(" ");
+        }, 200);
     </script>
 </body>
 </html>
